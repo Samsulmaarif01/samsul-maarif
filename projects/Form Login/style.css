@@ -1,3 +1,4 @@
+/* Base styles */
 body {
     font-family: "Roboto", sans-serif;
     display: flex;
@@ -6,21 +7,28 @@ body {
     height: 100vh;
     margin: 0;
   }
+  
   .outer-container {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     opacity: 0;
     animation: fadeIn 2s forwards;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px;
   }
+  
   .container {
     display: flex;
     background-color: white;
     border-radius: 20px;
     overflow: hidden;
-    width: 800px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
   }
+  
   .left {
     background-image: url("./assets/login\ image.jpg");
     background-size: cover;
@@ -34,19 +42,24 @@ body {
     align-items: center;
     width: 65%;
   }
+  
   .right {
     background-color: #e8eaeb;
     padding: 40px;
     width: 50%;
   }
+  
+  /* Form styles */
   .right h2 {
     margin: 0;
     font-size: 24px;
   }
+  
   .right p {
     margin: 10px 0 20px;
     color: #666;
   }
+  
   .right input[type="text"],
   .right input[type="email"],
   .right input[type="password"] {
@@ -57,8 +70,10 @@ body {
     border-radius: 5px;
     font-size: 16px;
     transition: all 0.3s ease;
+    box-sizing: border-box;
   }
   
+  /* Animations */
   @keyframes pulse {
     0% {
       transform: scale(1);
@@ -89,19 +104,16 @@ body {
   .right input[type="checkbox"] {
     margin-right: 10px;
   }
+  
   .right .options {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 10px 0;
+    flex-wrap: wrap;
+    gap: 10px;
   }
-  .right .options a {
-    color: #0052cc;
-    text-decoration: none;
-  }
-  .right .options a:hover {
-    text-decoration: underline;
-  }
+  
   .right button {
     width: 100%;
     padding: 10px;
@@ -112,47 +124,124 @@ body {
     font-size: 16px;
     cursor: pointer;
   }
+  
   .right button:hover {
     background-color: #003d99;
   }
-  .right .signup {
-    text-align: center;
-  }
-  .right .signup a {
-    color: #0052cc;
-    text-decoration: none;
-  }
-  .right .signup a:hover {
-    text-decoration: underline;
-  }
   
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  .fade-in {
-    animation: fadeIn 1s ease-in-out forwards;
-    animation-iteration-count: 1;
-    animation-delay: 1s;
-  }
-  
-  .fade-in-long {
-    animation: fadeIn 2s ease-in-out forwards;
-    animation-iteration-count: 1;
-    animation-delay: 1s;
-  }
-  
+  /* Video background */
   video {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 1005;
+    height: 100%;
     object-fit: cover;
     z-index: -1;
+  }
+  
+  /* Responsive Media Queries */
+  
+  /* Large devices (desktops, less than 1200px) */
+  @media (max-width: 1199.98px) {
+    .container {
+      max-width: 90%;
+    }
+  }
+  
+  /* Medium devices (tablets, less than 992px) */
+  @media (max-width: 991.98px) {
+    .container {
+      max-width: 95%;
+    }
+    
+    .right h2 {
+      font-size: 22px;
+    }
+  }
+  
+  /* Small devices (landscape phones, less than 768px) */
+  @media (max-width: 767.98px) {
+    .container {
+      flex-direction: column;
+      max-width: 100%;
+    }
+    
+    .left {
+      width: 100%;
+      min-height: 200px;
+      padding: 20px;
+    }
+    
+    .right {
+      width: 100%;
+      padding: 20px;
+    }
+    
+    .right h2 {
+      font-size: 20px;
+    }
+    
+    .outer-container {
+      margin: 10px;
+    }
+  }
+  
+  /* Extra small devices (phones, less than 576px) */
+  @media (max-width: 575.98px) {
+    body {
+      height: auto;
+      min-height: 100vh;
+    }
+    
+    .outer-container {
+      margin: 5px;
+      border-radius: 10px;
+    }
+    
+    .container {
+      border-radius: 10px;
+    }
+    
+    .left {
+      min-height: 150px;
+      padding: 15px;
+    }
+    
+    .right {
+      padding: 15px;
+    }
+    
+    .right h2 {
+      font-size: 18px;
+    }
+    
+    .right input[type="text"],
+    .right input[type="email"],
+    .right input[type="password"] {
+      padding: 8px;
+      font-size: 14px;
+    }
+    
+    .right .options {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .right button {
+      padding: 8px;
+      font-size: 14px;
+    }
+  }
+  
+  /* Height-based media queries */
+  @media (max-height: 600px) {
+    body {
+      height: auto;
+      min-height: 100vh;
+    }
+    
+    .left {
+      min-height: 120px;
+    }
   }
