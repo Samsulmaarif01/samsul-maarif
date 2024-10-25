@@ -727,16 +727,16 @@ section::-webkit-scrollbar-thumb {
 }
 
 .social-icons {
-  display: flex; 
+  display: flex;
   gap: 15px;
-  margin-top: 1rem; 
+  margin-top: 1rem;
   justify-content: center;
 }
 
 .social-icon {
-  font-size: 24px; 
+  font-size: 24px;
   color: #000;
-  transition: color 0.3s ease; 
+  transition: color 0.3s ease;
 }
 
 .social-icon:hover {
@@ -800,33 +800,127 @@ section::-webkit-scrollbar-thumb {
   background: #357abd;
 }
 
-
+/* Tablet Breakpoint */
 @media (max-width: 992px) {
   .contact-content {
-      grid-template-columns: 1fr;
-      gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
   }
 
   .contact-info {
-      padding-right: 0;
-      text-align: center;
-  }
-}
-
-@media (max-width: 576px) {
-  .contact-section {
-      padding: 1rem;
-  }
-
-  .contact-container {
-      padding: 1rem;
+    padding-right: 0;
+    text-align: center;
   }
 
   .contact-form {
-      padding: 1.5rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+/* Mobile Breakpoint */
+@media (max-width: 576px) {
+  .contact-section {
+    padding: 1rem;
+  }
+
+  .contact-container {
+    padding: 1rem;
+  }
+
+  .contact-content {
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+    width: 100%;
+  }
+
+  .contact-info {
+    padding: 0 1rem;
   }
 
   .contact-info h2 {
-      font-size: 2rem;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .contact-info p {
+    text-align: center;
+    font-size: 0.95rem;
+  }
+
+  .form-group label {
+    text-align: left;
+  }
+
+  .social-icons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .submit-btn {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* Small Mobile Breakpoint */
+@media (max-width: 375px) {
+  .contact-section {
+    padding: 0.5rem;
+  }
+
+  .contact-container {
+    padding: 0.5rem;
+  }
+
+  .contact-info h2 {
+    font-size: 1.75rem;
+  }
+
+  .contact-form {
+    padding: 1rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
+
+  .submit-btn {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Additional centering fixes */
+@media (max-width: 992px) {
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-form,
+  .contact-info {
+    width: 100%;
+    max-width: 500px;
   }
 }
