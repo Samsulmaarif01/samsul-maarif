@@ -1,0 +1,360 @@
+<html>
+  <head>
+    <title>Blog Dasboard Admin</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        background-color: #1f1f38;
+        color: #fff;
+      }
+      .sidebar {
+        width: 80px;
+        height: 100vh;
+        background-color: #141432;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+      }
+      .sidebar i {
+        color: #8c8ca1;
+        margin: 20px 0;
+        font-size: 20px;
+      }
+      .sidebar .logo {
+        margin-bottom: 40px;
+        font-size: 40px;
+        color: #ffcc00;
+      }
+      .main-content {
+        margin-left: 80px;
+        padding: 20px;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .header .search-bar {
+        display: flex;
+        align-items: center;
+        background-color: #2a2a4a;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .header .search-bar input {
+        background: none;
+        border: none;
+        color: #fff;
+        outline: none;
+        width: 100%;
+        margin-left: 10px;
+      }
+      .header .search-bar i {
+        color: #8c8ca1;
+      }
+      .header .header-icons {
+        display: flex;
+        align-items: center;
+      }
+      .header .header-icons i {
+        color: #8c8ca1;
+        margin: 0 10px;
+        position: relative;
+      }
+      .header .header-icons img {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+      }
+      .card {
+        background-color: #2a2a4a;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+      .card h2 {
+        margin: 0;
+        font-size: 18px;
+      }
+      .card p {
+        color: #8c8ca1;
+        margin: 5px 0 0;
+      }
+      .card .card-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+      .card .card-content i {
+        font-size: 30px;
+      }
+      .card .card-content .text {
+        text-align: right;
+      }
+      .card .card-content .text h3 {
+        margin: 0;
+        font-size: 24px;
+      }
+      .card .card-content .text p {
+        margin: 5px 0 0;
+      }
+      .actions {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+      .actions button {
+        background-color: #ffcc00;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        color: #000;
+        cursor: pointer;
+      }
+      .actions button:hover {
+        background-color: #e6b800;
+      }
+      .posts-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .posts-table th,
+      .posts-table td {
+        padding: 10px;
+        text-align: left;
+      }
+      .posts-table th {
+        background-color: #1f1f38;
+      }
+      .posts-table td {
+        background-color: #2a2a4a;
+      }
+      .posts-table .edit-button {
+        background-color: #00ccff;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: #000;
+        cursor: pointer;
+      }
+      .posts-table .edit-button:hover {
+        background-color: #00b3e6;
+      }
+      .chart-container {
+        background-color: #2a2a4a;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo">
+        <i class="fas fa-blog"> </i>
+      </div>
+      <i class="fas fa-home"> </i>
+      <i class="fas fa-chart-bar"> </i>
+      <i class="fas fa-pencil-alt"> </i>
+      <i class="fas fa-comments"> </i>
+      <i class="fas fa-cog"> </i>
+    </div>
+    <div class="main-content">
+      <div class="header">
+        <div class="search-bar">
+          <i class="fas fa-search"> </i>
+          <input placeholder="Search here..." type="text" />
+        </div>
+        <div class="header-icons">
+          <i class="fas fa-bell">
+            <span class="notification-dot"> </span>
+          </i>
+          <img
+            alt="User Avatar"
+            height="30"
+            src="https://storage.googleapis.com/a1aa/image/rfurJHEPw1wcQ6M3E565vySg082vMyjBjUzeT0yhIFZmlQqTA.jpg"
+            width="30"
+          />
+        </div>
+      </div>
+      <div class="card">
+        <h2>Dasboard Admin Blog</h2>
+        <p>Bulan Lalu</p>
+        <div class="card-content">
+          <div>
+            <i class="fas fa-pencil-alt" style="color: #ffcc00"> </i>
+            <div class="text">
+              <h3>50</h3>
+              <p>Postingan</p>
+            </div>
+          </div>
+          <div>
+            <i class="fas fa-comments" style="color: #00ccff"> </i>
+            <div class="text">
+              <h3>200</h3>
+              <p>Komentar</p>
+            </div>
+          </div>
+          <div>
+            <i class="fas fa-users" style="color: #ff66ff"> </i>
+            <div class="text">
+              <h3>1500</h3>
+              <p>Pengunjung</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-container">
+        <canvas id="blogLineChart"> </canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="blogBarChart"> </canvas>
+      </div>
+      <div class="actions">
+        <button onclick="addPost()">Tambahkan Postingan Baru</button>
+      </div>
+      <div class="posts-table-container">
+        <table class="posts-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Judul</th>
+              <th>Tanggal</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Postingan Blog Pertama</td>
+              <td>2023-10-01</td>
+              <td>
+                <button class="edit-button" onclick="editPost(1)">Edit</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Postingan Blog Kedua</td>
+              <td>2023-10-05</td>
+              <td>
+                <button class="edit-button" onclick="editPost(2)">Edit</button>
+              </td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script>
+      function addPost() {
+        alert("Add New Post functionality to be implemented.");
+      }
+
+      function editPost(postId) {
+        alert(
+          "Edit Post functionality for post ID " +
+            postId +
+            " to be implemented."
+        );
+      }
+
+      // Line Chart configuration
+      const lineCtx = document.getElementById("blogLineChart").getContext("2d");
+      const blogLineChart = new Chart(lineCtx, {
+        type: "line",
+        data: {
+          labels: ["Januari", "Februari", "Maret", "April"],
+          datasets: [
+            {
+              label: "Postingan",
+              data: [10, 15, 20, 5],
+              borderColor: "#ffcc00",
+              backgroundColor: "rgba(255, 204, 0, 0.2)",
+              fill: true,
+            },
+            {
+              label: "Komentar",
+              data: [50, 60, 70, 20],
+              borderColor: "#00ccff",
+              backgroundColor: "rgba(0, 204, 255, 0.2)",
+              fill: true,
+            },
+            {
+              label: "Pengunjung",
+              data: [300, 400, 500, 300],
+              borderColor: "#ff66ff",
+              backgroundColor: "rgba(255, 102, 255, 0.2)",
+              fill: true,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            x: {
+              beginAtZero: true,
+            },
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+
+      // Bar Chart configuration
+      const barCtx = document.getElementById("blogBarChart").getContext("2d");
+      const blogBarChart = new Chart(barCtx, {
+        type: "bar",
+        data: {
+          labels: ["Januari", "Februari", "Maret", "April"],
+          datasets: [
+            {
+              label: "Postingan",
+              data: [10, 15, 20, 5],
+              backgroundColor: "rgba(255, 204, 0, 0.8)",
+              borderColor: "#ffcc00",
+              borderWidth: 1,
+            },
+            {
+              label: "Komentar",
+              data: [50, 60, 70, 20],
+              backgroundColor: "rgba(0, 204, 255, 0.8)",
+              borderColor: "#00ccff",
+              borderWidth: 1,
+            },
+            {
+              label: "Pemgunjung",
+              data: [300, 400, 500, 300],
+              backgroundColor: "rgba(255, 102, 255, 0.8)",
+              borderColor: "#ff66ff",
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            x: {
+              beginAtZero: true,
+            },
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Tebak Angka</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <video autoplay muted loop id="background-video">
+    <source src="./assets/7048269_Animation_Motion Graphic_3840x2160.mp4" type="video/mp4">
+    Browser kamu tidak mendukung video HTML5.
+  </video>
+  <div class="game-container">
+    <h1>Coba Tebak Angkanya</h1>
+    <p>Tebak angka dari 1 sampai 100:</p>
+    <input type="number" id="guess" placeholder="Masukan angkanya">
+    <button onclick="checkGuess()">Tebak</button>
+    <button onclick="resetGame()">Reset</button>
+    <p id="message"></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
