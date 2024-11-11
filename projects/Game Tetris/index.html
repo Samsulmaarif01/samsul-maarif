@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-wrapper">
+        <h1 class="game-title">TETRIS</h1>
+        
+        <div class="game-container">
+            <div class="game-info">
+                <div class="info-box">
+                    <div class="score">
+                        <label>SCORE</label>
+                        <span id="score">0</span>
+                    </div>
+                    <div class="level">
+                        <label>LEVEL</label>
+                        <span id="level">1</span>
+                    </div>
+                    <div class="lines">
+                        <label>LINES</label>
+                        <span id="lines">0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="game-board">
+                <canvas id="tetris" width="240" height="400"></canvas>
+            </div>
+            
+            <div class="controls">
+                <button id="startBtn" class="start-btn">START GAME</button>
+                <div class="mobile-controls">
+                    <div class="control-row">
+                        <button id="leftBtn" class="control-btn">←</button>
+                        <button id="rotateBtn" class="control-btn">ROTATE</button>
+                        <button id="rightBtn" class="control-btn">→</button>
+                    </div>
+                    <div class="control-row">
+                        <button id="dropBtn" class="control-btn drop-btn">DROP</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h2>How to Play</h2>
+            <p>Use arrow keys or buttons to control:</p>
+            <ul>
+                <li>← → : Move left/right</li>
+                <li>↑ : Rotate</li>
+                <li>↓ : Soft drop</li>
+            </ul>
+        </div>
+    </div>
+    <script src="tetris.js"></script>
+</body>
+</html>
