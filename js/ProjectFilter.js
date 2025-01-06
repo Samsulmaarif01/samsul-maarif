@@ -113,27 +113,28 @@ class ProjectGallery {
             projectCard.className = 'transform transition-all duration-300 opacity-0 translate-y-4';
             
             projectCard.innerHTML = `
-                <div class="card ">
-                    <div class="card-content">
-                        <img src="${project.image}" 
-                             alt="${project.title}" 
-                             class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <a href="${project.link}" 
-                               target="_blank" 
-                               class="bg-white text-gray-900 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition-colors">
-                                Lihat Project
-                            </a>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 card-title">${project.title}</h3>
-                        <p card-text">${project.description}</p>
-                        <span class="inline-block px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold">
-                            ${project.category}
-                        </span>
+               <div class="card">
+                <div class="card-content">
+                    <img src="${project.image}" 
+                        alt="${project.title}" 
+                        class="card-image">
+                    <div class="card-overlay">
+                        <a href="${project.link}" 
+                        target="_blank" 
+                        class="card-button">
+                            Lihat Project
+                        </a>
                     </div>
                 </div>
+                <div class="card-description">
+                    <h3 class="card-title">${project.title}</h3>
+                    <p class="card-text">${project.description}</p>
+                    <span class="card-category">
+                        ${project.category}
+                    </span>
+                </div>
+            </div>
+
             `;
 
             this.projectGrid.appendChild(projectCard);

@@ -126,8 +126,14 @@
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-800 mb-8">Project Saya</h2>
+                <div class="filter-buttons">
+                    <button onclick="filterImages('all')">Semua</button>
+                    <button onclick="filterImages('web-app')">web app</button>
+                    <button onclick="filterImages('game')">game</button>
+                    <button onclick="filterImages('dasboard')">dasboard</button>
+                  </div>
                 <!-- Filter Buttons -->
-                <div id="filter-buttons" class="flex flex-wrap justify-center gap-3 mb-8">
+                <!-- <div id="filter-buttons" class="flex flex-wrap justify-center gap-3 mb-8">
                     <button data-category="all" class="filter-btn bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">
                         Semua
                     </button>
@@ -140,15 +146,15 @@
                     <button data-category="dashboard" class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-300 transition-colors">
                         Dashboard
                     </button>
-                </div>
+                </div> -->
             </div>
             
             <!-- Project Grid -->
-            <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- <div id="project-grid" class="card">
                 
-            </div>
+            </div> -->
         </div>
-        <!-- <div class="card">
+        <div class="card web-app">
             <img src="/images/CardImage/Halaman-Login.png" alt="Card Image">
             <div class="card-content">
                 <h2 class="card-title">Form Login</h2>
@@ -156,7 +162,7 @@
                 <a href="https://samsulmaarif01.github.io/Form-Login/" class="card-button" target="_blank">Lihat</a>
             </div>
         </div>
-        <div class="card">
+        <div class="card web-app">
             <img src="/images/CardImage/Kalkulator.png" alt="Card Image">
             <div class="card-content">
                 <h2 class="card-title">kalkulator</h2>
@@ -164,7 +170,7 @@
                 <a href="https://samsulmaarif01.github.io/Kalkulator/" class="card-button" target="_blank">Lihat</a>
             </div>
         </div>
-        <div class="card">
+        <div class="card game">
             <img src="/images/CardImage/Game-Tebak-Angka.png" alt="Card Image">
             <div class="card-content">
                 <h2 class="card-title">Game Tebak Angka</h2>
@@ -172,7 +178,7 @@
                 <a href="https://samsulmaarif01.github.io/Game-tebak-angka/" class="card-button" target="_blank">Lihat</a>
             </div>
         </div>
-        <div class="card">
+        <div class="card dasboard">
             <img src="/images/CardImage/Blog-Dasboard-Admin.png" alt="Card Image">
             <div class="card-content">
                 <h2 class="card-title">Dasboard Admin</h2>
@@ -180,7 +186,7 @@
                 <a href="https://samsulmaarif01.github.io/Dasbord-Admin-view/" class="card-button" target="_blank">Lihat</a>
             </div>
         </div>
-        <div class="card">
+        <div class="card dasboard">
             <img src="/images/CardImage/Admin-Dashboard-karyawan.png" alt="Card Image">
             <div class="card-content">
                 <h2 class="card-title">Dasboard Karyawan</h2>
@@ -188,7 +194,7 @@
                 <a href="https://samsulmaarif01.github.io/Samsul_Maarif_05TPLP007/" class="card-button" target="_blank">Lihat</a>
             </div>
         </div>
-        <div class="card">
+        <div class="card game">
             <img src="/images/CardImage/Tetris-Game.png" alt="Card Image">
             <div class="card-content">
                 <h2 class="card-title">Game Tetris</h2>
@@ -196,7 +202,7 @@
                 <a href="https://samsulmaarif01.github.io/Game-Tetris/" class="card-button" target="_blank">Lihat</a>
             </div>
         </div>
-        <div class="card">
+        <div class="card web-app">
             <img src="/images/CardImage/Portofolio-Mahasiswa.png" alt="Card Image">
             <div class="card-content">
                 <h2 class="card-title">Web Pengumpulan tugas</h2>
@@ -204,14 +210,14 @@
                 <a href="https://web-pengumpulan-tugas-mahasiswa-t5km.vercel.app/" class="card-button" target="_blank">Lihat</a>
             </div>
         </div>
-        <div class="card">
+        <div class="card dasboard">
             <img src="/images/CardImage/Grafik-laporan-Perbandingan-penjualan.png" alt="Card Image">
             <div class="card-content">
                 <h2 class="card-title">Grafik Laporan penjualan</h2>
                 <p class="card-text">grafik perbandingan laporan penjualan</p>
                 <a href="https://samsulmaarif01.github.io/chart-perbandingan-laporan-penjualan/" class="card-button" target="_blank">Lihat</a>
             </div>
-        </div> -->
+        </div>
     </section>
 
     <!-- CONTACT -->
@@ -286,7 +292,22 @@
 
     
     
-    
+    <script>
+        function filterImages(category) {
+          const allImages = document.querySelectorAll('.card');
+          
+          allImages.forEach(image => {
+            if (category === 'all' || image.classList.contains(category)) {
+              image.style.display = 'block'; // Tampilkan gambar
+              image.querySelector('img').style.maxWidth = '800px'; // Set ukuran kecil
+              image.querySelector('img').style.height = 'auto'; // Menjaga rasio aspek
+            } else {
+              image.style.display = 'none'; // Sembunyikan gambar
+            }
+          });
+        }
+        
+      </script>
     <script src="js/ProjectFilter.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
